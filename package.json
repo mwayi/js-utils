@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "mocha ./src --recursive"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-sorted": "^0.1.0",
+    "chai-spies": "^1.0.0",
+    "lint": "^1.1.2",
+    "mocha": "^3.5.0"
+  }
+}
