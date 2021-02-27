@@ -11,7 +11,7 @@ describe('QueryStringSerializer', function() {
         assert.equal(subject, 'foo=bar');
     });
 
-    it('Handles recurssive query string', function() {
+    it('Handles recursive query string', function() {
         let parameters = {
             foo: {
                 bar: {
@@ -22,4 +22,13 @@ describe('QueryStringSerializer', function() {
         let subject = new QueryStringSerializer().serialize(parameters)
         assert.equal(subject, 'foo[bar][baz]=value');
     });
+
+    it('Handles arrays', function() {
+        let parameters = {
+            foo: ['bar', 'baz']
+        }
+        let subject = new QueryStringSerializer().serialize(parameters)
+        assert.equal(subject, 'foo[0]=bar&foo[1]=baz');
+    });
+    
 });
